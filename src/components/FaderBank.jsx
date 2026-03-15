@@ -75,10 +75,10 @@ const SkillsPanel = ({ inView }) => {
             </div>
 
             {/* Faders — distributed to align extremes with tools */}
-            <div className="flex-1 flex items-center justify-center">
-                <div className="flex justify-between items-end py-3 w-full max-w-[760px] mx-auto">
+            <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex justify-between md:justify-around items-end py-3 w-full max-w-[760px] mx-auto overflow-x-auto pb-4 snap-x">
                     {skills.map((skill, index) => (
-                        <div key={skill.name} className="flex flex-col items-center gap-1 w-[130px]">
+                        <div key={skill.name} className="flex flex-col items-center gap-1 w-[110px] md:w-[130px] flex-shrink-0 snap-center">
                             <Fader
                                 name={skill.name}
                                 shortName={skill.shortName}

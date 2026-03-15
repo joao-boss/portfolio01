@@ -17,7 +17,7 @@ const ToolFader = ({ tool, delay, inView }) => {
     const marks = [0, 25, 50, 75, 100];
 
     return (
-        <div className="flex flex-col items-center gap-2 w-[60px] md:w-[68px]">
+        <div className="flex flex-col items-center gap-2 w-[60px] md:w-[68px] flex-shrink-0 snap-center">
             {/* Tool icon box */}
             <div
                 className="w-10 h-10 md:w-11 md:h-11 rounded-lg flex items-center justify-center transition-all hover:scale-110 overflow-hidden"
@@ -105,7 +105,7 @@ const ToolsPanel = ({ inView }) => {
             </div>
 
             {/* All tool faders — side by side in a single row */}
-            <div className="flex justify-between items-end py-3 w-full max-w-[760px] mx-auto overflow-x-auto">
+            <div className="flex justify-between items-end py-3 w-full max-w-[760px] mx-auto overflow-x-auto pb-4 snap-x gap-4 md:gap-0">
                 {allTools.map((tool, i) => (
                     <ToolFader key={tool.abbr} tool={tool} delay={0.3 + i * 0.06} inView={inView} />
                 ))}
