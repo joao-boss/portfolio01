@@ -1,0 +1,38 @@
+Role: You are my Lead Frontend Developer. I am the Creative Director.
+
+Objective: Build a professional, responsive portfolio for 'João Boss / Ponthe' using React and Tailwind CSS.
+
+The Workflow: I will manage all site data via a file called content.txt. You must build the application to dynamically parse this file and render the UI. Do not hardcode project details into the components.
+
+Architecture & Design:
+
+Theme: 'Studio-Dark'. Palette: #0A0A0A (background), #1A1A1A (cards), #FFFFFF (text). Use 'Inter' or 'Montserrat' for clean, professional typography.
+
+Sections to Build:
+
+Hero: Display my name, alias, and the 10-year bio from the [PROFILE_SECTION].
+
+Audio/Beats Grids: Create 16:9 placeholder containers for the YouTube links in [AUDIO_PLACEMENTS_GRID] and [BEATS_GRID].
+
+Design Grid: Create a clean gallery for the Behance work in [DESIGN_PORTFOLIO_GRID].
+
+Technical Stack (The Mixer): This is a priority. For each item in [TECHNICAL_STACK], create a vertical Audio Fader. The knob position must correspond to the numerical value (0-100) in the text file.
+
+Animation: Implement a 'Power-On' sequence. When the site loads, the Hero text should fade in, and when the Technical Stack is scrolled into view, the fader knobs must slide from 0 to their final positions.
+
+Action: Initialize the project structure, create the data-parsing logic for content.txt, and show me the Browser Preview of the Hero and the Animated Faders. Do not show me code; show me the functional UI."
+
+The Build Plan (How it works under the hood)
+The Parser: The Agent creates a script that scans content.txt for headers like [TECHNICAL_STACK]. It recognizes that Ableton_Live: 98 means the label is "Ableton Live" and the variable is 98.
+
+The Component Mapping:
+
+Text Data → Sent to the Hero section.
+
+Placeholders → Sent to the Grid sections (awaiting your real links).
+
+Numerical Data → Sent to the Fader Component to define the translate-y or bottom CSS property of the fader knob.
+
+The Visual Engine: The Agent uses Tailwind to create the "Studio" look—adding shadows to the fader tracks so they look recessed into the "desk," and adding a metallic gradient to the knobs.
+
+

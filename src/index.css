@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ─── Studio-Dark Design Tokens ─── */
+@theme {
+  --color-surface-900: #05050a;
+  --color-surface-800: #0a0a12;
+  --color-surface-700: #10101a;
+  --color-surface-600: #181826;
+  --color-surface-500: #222234;
+  --color-surface-400: #2c2c42;
+  --color-metal-100: #f1f1f4;
+  --color-metal-200: #e0e0e8;
+  --color-metal-300: #c8c8d4;
+  --color-metal-400: #a8a8b8;
+  --color-metal-500: #88889c;
+  --color-accent-teal: #45a2bc;
+  --color-accent-cyan: #6bd5e5;
+  --color-accent-blue: #5c8dff;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background: var(--color-surface-900);
+  color: var(--color-metal-200);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+/* ─── Noise Overlay ─── */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ─── Fader Track Groove ─── */
+.fader-track {
+  background: linear-gradient(180deg, #1a1a22 0%, #0e0e16 100%);
+  box-shadow:
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Metallic Knob ─── */
+.fader-knob {
+  background: linear-gradient(180deg,
+      #e0e0e8 0%,
+      #c8c8d0 15%,
+      #b0b0bc 30%,
+      #c0c0cc 50%,
+      #a8a8b8 70%,
+      #d0d0d8 85%,
+      #f0f0f4 100%);
+  box-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.6) inset,
+    0 -1px 1px rgba(0, 0, 0, 0.2) inset,
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.fader-knob::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 0, 0, 0.3),
+      transparent);
+  transform: translateY(-50%);
+}
+
+.fader-knob::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 15%;
+  right: 15%;
+  height: 40%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  border-radius: 50%;
+}
+
+/* ─── Panel Surface ─── */
+.panel-surface {
+  background: linear-gradient(165deg,
+      #c2c5cc 0%,
+      #b0b3bc 20%,
+      #a8abb4 40%,
+      #b4b7c0 60%,
+      #a0a3ac 80%,
+      #bcc0c8 100%);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Tools Panel Surface ─── */
+.tools-panel-surface {
+  background: linear-gradient(170deg,
+      rgba(50, 65, 80, 0.85) 0%,
+      rgba(35, 50, 65, 0.9) 30%,
+      rgba(28, 42, 56, 0.92) 60%,
+      rgba(40, 55, 70, 0.88) 100%);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-500);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-metal-500);
+}
+
+/* ─── Scale marks for fader ─── */
+.scale-mark {
+  position: absolute;
+  right: -6px;
+  width: 4px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+}
