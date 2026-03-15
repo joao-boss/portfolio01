@@ -30,20 +30,13 @@ export const translations = {
             },
             contact: {
                 title: "Contato",
-                subtitle: "Vamos construir a sua próxima ideia.",
-                heading: "Inicie um projeto",
-                description: "Envie uma mensagem direta sem precisar de apps ou cadastros, apenas escreva abaixo.",
+                subtitle: "Entre em contato",
                 fields: {
-                    name: "Seu Nome / Marca",
-                    subject: "Assunto / Projeto",
-                    message: "Mensagem Principal"
+                    name: "Nome",
+                    subject: "Assunto",
+                    message: "Mensagem"
                 },
-                placeholders: {
-                    name: "Ex: Daft Punk...",
-                    subject: "Ex: Produção de EP, Identidade Visual...",
-                    message: "Fale um pouco sobre o que tem em mente..."
-                },
-                sendButton: "ABRIR E-MAIL DE CONTATO"
+                sendButton: "ENVIAR"
             }
         },
         hero: {
@@ -90,20 +83,13 @@ export const translations = {
             },
             contact: {
                 title: "Contact",
-                subtitle: "Let's build your next idea.",
-                heading: "Start a project",
-                description: "Send a direct message without needing apps or signups, just write below.",
+                subtitle: "Get in touch",
                 fields: {
-                    name: "Your Name / Brand",
-                    subject: "Subject / Project Scope",
-                    message: "Main Message"
+                    name: "Name",
+                    subject: "Subject",
+                    message: "Message"
                 },
-                placeholders: {
-                    name: "Ex: Daft Punk...",
-                    subject: "Ex: EP Production, Visual Identity...",
-                    message: "Tell me a bit about what's on your mind..."
-                },
-                sendButton: "OPEN CONTACT EMAIL"
+                sendButton: "SEND"
             }
         },
         hero: {
