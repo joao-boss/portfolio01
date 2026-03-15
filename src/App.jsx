@@ -7,6 +7,7 @@ import AudioPlacements from "./components/AudioPlacements";
 import BeatsSection from "./components/BeatsSection";
 import CollapsibleSection from "./components/CollapsibleSection";
 import DesignPortfolio from "./components/DesignPortfolio";
+import ContactSection from "./components/ContactSection";
 import { useLanguage } from "./context/LanguageContext";
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
             </a>
             <a href="#skills-tools" className="text-xs text-metal-400 tracking-widest uppercase font-[family-name:var(--font-family-mono)] hover:text-accent-teal transition-colors">
               {t.nav.skills}
+            </a>
+            <a href="#contato" className="text-xs text-metal-400 tracking-widest uppercase font-[family-name:var(--font-family-mono)] border-l border-metal-400/20 pl-5 hover:text-accent-teal transition-colors">
+              {t.nav.contact}
             </a>
           </div>
         </div>
@@ -111,6 +115,17 @@ function App() {
             <ToolsPanel inView={toolsInView} />
           </div>
         </div>
+      </CollapsibleSection>
+
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-metal-500/5 to-transparent my-2" />
+
+      {/* Contact Section */}
+      <CollapsibleSection
+        id="contato"
+        title={t.sections.contact.title}
+        subtitle={t.sections.contact.subtitle}
+      >
+        <ContactSection />
       </CollapsibleSection>
 
       {/* Footer */}
