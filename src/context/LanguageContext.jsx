@@ -12,7 +12,7 @@ export const translations = {
         },
         sections: {
             audioPlacements: {
-                title: "Audio Placements",
+                title: "Produção de Áudio",
                 subtitle: "Beats, produções, mix & master."
             },
             beats: {
