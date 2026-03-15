@@ -61,7 +61,7 @@ const Fader = ({ name, shortName, value, delay = 0, inView }) => {
 
             {/* Label */}
             <div className="flex flex-col items-center gap-0.5">
-                <span className="text-[10px] font-semibold tracking-wide uppercase text-surface-600 leading-tight text-center whitespace-nowrap">
+                <span className="hidden md:block text-[10px] font-semibold tracking-wide uppercase text-surface-600 leading-tight text-center whitespace-nowrap">
                     {name}
                 </span>
             </div>

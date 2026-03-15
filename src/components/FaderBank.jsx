@@ -78,27 +78,16 @@ const SkillsPanel = ({ inView }) => {
             <div className="flex-1 flex items-center justify-center w-full">
                 <div className="flex justify-between md:justify-around items-end py-3 w-full max-w-[760px] mx-auto overflow-x-auto pb-4 snap-x">
                     {skills.map((skill, index) => (
-                        <div key={skill.name} className="flex flex-col items-center gap-2 md:gap-1 w-[80px] md:w-[130px] flex-shrink-0 snap-center">
-                            {/* Versão Desktop: Fader + Ícone */}
-                            <div className="hidden md:flex flex-col items-center gap-1 w-full">
-                                <Fader
-                                    name={skill.name}
-                                    shortName={skill.shortName}
-                                    value={skill.value}
-                                    delay={0.3 + index * 0.08}
-                                    inView={inView}
-                                />
+                        <div key={skill.name} className="flex flex-col items-center gap-2 md:gap-1 w-[70px] md:w-[130px] flex-shrink-0 snap-center">
+                            <Fader
+                                name={skill.name}
+                                shortName={skill.shortName}
+                                value={skill.value}
+                                delay={0.3 + index * 0.08}
+                                inView={inView}
+                            />
+                            <div className="scale-125 md:scale-100 text-surface-600 mt-1 md:mt-0">
                                 <SkillIcon type={skill.icon} />
-                            </div>
-
-                            {/* Versão Mobile: Apenas Ícone e Nome Curto em formato de botão/chip */}
-                            <div className="md:hidden flex flex-col items-center justify-center p-3 rounded-xl bg-black/5 border border-black/10 w-full aspect-square">
-                                <div className="scale-125 mb-2 text-surface-600">
-                                    <SkillIcon type={skill.icon} />
-                                </div>
-                                <span className="text-[9px] font-bold tracking-wider text-surface-600 uppercase text-center">
-                                    {skill.shortName}
-                                </span>
                             </div>
                         </div>
                     ))}
