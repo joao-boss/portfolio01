@@ -46,7 +46,7 @@ export const productionTools = [
         logoUrl: null,
     },
     {
-        name: "Ableton Live", abbr: "Live", value: 98, color: "#00FF00", bg: "#000000",
+        name: "Ableton Live", abbr: "Live", value: 98, color: "#FFFFFF", bg: "#222222",
         logoUrl: null,
     },
     {
