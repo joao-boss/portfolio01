@@ -2,8 +2,12 @@ import { motion } from "framer-motion";
 import Fader from "./Fader";
 import { skills } from "../data/content";
 
+import { useLanguage } from "../context/LanguageContext";
+
 /* Skill-type icons rendered inline */
 const SkillIcon = ({ type }) => {
+    const { language } = useLanguage();
+
     const icons = {
         mix: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
@@ -28,9 +32,9 @@ const SkillIcon = ({ type }) => {
             </svg>
         ),
         ai: (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+            <span className="text-[12px] font-bold font-[family-name:var(--font-family-mono)] h-4 flex items-center">
+                {language === 'pt' ? 'IA' : 'AI'}
+            </span>
         ),
         lang: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
@@ -38,7 +42,7 @@ const SkillIcon = ({ type }) => {
             </svg>
         ),
     };
-    return <span className="text-surface-500/70">{icons[type] || null}</span>;
+    return <span className="text-surface-500/70 flex justify-center items-center">{icons[type] || null}</span>;
 };
 
 const BrainGearIcon = () => (
