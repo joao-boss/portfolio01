@@ -33,6 +33,7 @@ export const translations = {
                 subtitle: "Entre em contato",
                 fields: {
                     name: "Nome",
+                    email: "E-mail",
                     subject: "Assunto",
                     message: "Mensagem"
                 },
@@ -86,6 +87,7 @@ export const translations = {
                 subtitle: "Get in touch",
                 fields: {
                     name: "Name",
+                    email: "Email",
                     subject: "Subject",
                     message: "Message"
                 },
